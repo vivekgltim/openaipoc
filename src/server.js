@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 
 const client = new OpenAI({
-  apiKey: "6f851b2fb9144e2da09c5abc24655105",
+  apiKey: "",
   endPoint: "https://rcg-openai1.openai.azure.com/",
   // apiVersion: "your_api_version"
 });
