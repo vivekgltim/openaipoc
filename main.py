@@ -22,7 +22,7 @@ def send_prompt(prompt):
         response = client.chat.completions.create(
             model="rcg-openai-gpt4",  # Use a supported model
             messages=[
-                #{"role": "system", "content": prompt},
+                
                 {"role": "user", "content": prompt}
             ],
             max_tokens=800,
