@@ -15,7 +15,7 @@ const questions = [
 ];
 
 const inputs = [
-  "analyse response on these parameters CUSTOM DEVELOPMENT, DATA_COMPLEXITY, CONTENT VOLUME, REALTIME INTERACTION, CURRENT AUTOMATION, REPETITIVE TASKS, AI EXPERTISE, INNOVATION IMPORTANCE, CUSTOMER SATISFACTION, RECOMMENDATION LIKELIHOOD"
+  "Analyse the above response and provide your assessment on how Generative AI can support this project. If you were to rank the feasibility of using Generative AI in the set-up explained above, what would it be? For example, 60 out of 100. The response should inspire the reader to explore Generative AI options further. If you need inspiration on the factors to assess, then please consider these, CUSTOM DEVELOPMENT, DATA COMPLEXITY, CONTENT VOLUME, REALTIME INTERACTION, CURRENT AUTOMATION, REPETITIVE TASKS, AI EXPERTISE, INNOVATION IMPORTANCE, CUSTOMER SATISFACTION, RECOMMENDATION LIKELIHOOD"
 ];
 
 const Questionnaire = () => {
@@ -35,6 +35,7 @@ const Questionnaire = () => {
     const prompt = questions.map((question, index) => `${question}\nScore: ${answers[index]}`).join('\n\n') + '\n\n' + inputs.join('\n');
 
     try {
+      console.log(prompt)
       const res = await fetch('http://127.0.0.1:5000/api/prompts', {
         method: 'POST',
         headers: {
